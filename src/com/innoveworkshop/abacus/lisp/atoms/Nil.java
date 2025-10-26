@@ -31,4 +31,8 @@ public final class Nil extends Atom {
 	public Object getValue() {
 		return null;
 	}
+
+	public String toString() {
+		return "Nil";
+	}
 }

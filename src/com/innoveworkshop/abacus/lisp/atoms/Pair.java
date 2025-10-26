@@ -46,4 +46,23 @@ public class Pair extends Atom {
 	public Object getValue() {
 		return this;
 	}
+
+	public String toString() {
+		StringBuffer buf = new StringBuffer("(" + car().toString());
+		Atom atom = cdr();
+
+		// Build up the list representation.
+		while (!atom.isNil()) {
+			if (atom instanceof Pair) {
+				Pair pair = (Pair)atom;
+				buf.append(" ").append(pair.car().toString());
+				atom = pair.cdr();
+			} else {
+				buf.append(" . ").append(atom);
+				atom = Nil.getInstance();
+			}
+		}
+
+		return buf.append(")").toString();
+	}
 }

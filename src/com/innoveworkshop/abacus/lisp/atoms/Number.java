@@ -35,4 +35,8 @@ public class Number extends Atom {
 	public Object getValue() {
 		return this;
 	}
+
+	public String toString() {
+		return Double.toString(number);
+	}
 }

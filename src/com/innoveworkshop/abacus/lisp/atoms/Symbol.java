@@ -25,4 +25,8 @@ public class Symbol extends Atom {
 	public Object getValue() {
 		return symbol;
 	}
+
+	public String toString() {
+		return symbol;
+	}
 }
