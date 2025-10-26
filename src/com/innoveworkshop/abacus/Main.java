@@ -1,9 +1,15 @@
 package com.innoveworkshop.abacus;
 
+import com.innoveworkshop.abacus.lisp.Parser;
 import com.innoveworkshop.abacus.lisp.atoms.Nil;
 import com.innoveworkshop.abacus.lisp.atoms.Number;
 import com.innoveworkshop.abacus.lisp.atoms.Pair;
 import com.innoveworkshop.abacus.lisp.atoms.Symbol;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * The application's main runnable class.
@@ -33,5 +39,12 @@ public class Main {
 				new Pair(new Number(2), new Pair(new Number(3), Nil.getInstance())))));
 		System.out.println(new Pair(Symbol.getInstance("improper-list"), new Pair(new Number(1),
 				new Pair(new Number(2), new Pair(new Number(3), new Number(4))))));
+
+		// Randomly testing the parser.
+		System.out.println("Randomly testing the parser:");
+		String str = "  \t( 'test 123\n\"this (is)\ta\nstring\"\ranother\tthing \t\n spaced)\t ";
+		Parser parser = new Parser();
+		List<String> lex = parser.lex(str.trim());
+		System.out.println(lex);
 	}
 }
