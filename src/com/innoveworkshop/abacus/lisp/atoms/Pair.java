@@ -48,7 +48,7 @@ public class Pair extends Atom {
 	}
 
 	public String toString() {
-		StringBuffer buf = new StringBuffer("(" + car().toString());
+		StringBuilder buf = new StringBuilder("(" + car().toString());
 		Atom atom = cdr();
 
 		// Build up the list representation.

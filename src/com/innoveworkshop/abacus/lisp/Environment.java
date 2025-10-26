@@ -11,10 +11,10 @@ import java.util.ArrayList;
  */
 public class Environment {
 	private static Environment instance;
-	private final ArrayList symbols;
+	private final ArrayList<Symbol> symbols;
 
 	private Environment() {
-		symbols = new ArrayList();
+		symbols = new ArrayList<Symbol>();
 	}
 
 	/**
@@ -49,8 +49,7 @@ public class Environment {
 	 *         doesn't exist.
 	 */
 	public Symbol getSymbol(String symbol) {
-		for (int i = 0, n = symbols.size(); i < n; i++) {
-			Symbol sym = (Symbol)symbols.get(i);
+		for (Symbol sym : symbols) {
 			if (sym.equals(symbol))
 				return sym;
 		}
