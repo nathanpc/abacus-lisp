@@ -38,6 +38,28 @@ public class Number extends Atom {
 		return this;
 	}
 
+	public boolean equals(int num) {
+		return number == num;
+	}
+
+	public boolean equals(float num) {
+		return number == num;
+	}
+
+	public boolean equals(double num) {
+		return number == num;
+	}
+
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		return number == ((Number)o).number;
+	}
+
+	public int hashCode() {
+		return Double.toString(number).hashCode();
+	}
+
 	public String toString() {
 		// Set up a pretty number formatting specification.
 		NumberFormat nf = NumberFormat.getInstance();

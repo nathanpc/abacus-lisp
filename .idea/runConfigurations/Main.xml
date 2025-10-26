@@ -4,7 +4,7 @@
     <module name="abacus" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="com.innoveworkshop.abacus.*" />
+        <option name="PATTERN" value="com.innoveworkshop.abacus.lisp.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
