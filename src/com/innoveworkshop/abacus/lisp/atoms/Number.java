@@ -1,5 +1,7 @@
 package com.innoveworkshop.abacus.lisp.atoms;
 
+import java.text.NumberFormat;
+
 /**
  * An {@link Atom} that stores a numeric value.
  *
@@ -37,6 +39,12 @@ public class Number extends Atom {
 	}
 
 	public String toString() {
-		return Double.toString(number);
+		// Set up a pretty number formatting specification.
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setGroupingUsed(false);
+		nf.setMinimumFractionDigits(0);
+		nf.setMaximumFractionDigits(10);
+
+		return nf.format(number);
 	}
 }
